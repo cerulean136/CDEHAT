@@ -26,17 +26,13 @@ The model architecture is located [here](SR/super_resolution/archs/cdehat_arch.p
 
 
 ## <a name="update"></a>:new:Update
-Our paper was accepted on **March 3, 2026**.
+Our paper was accepted on `March 3, 2026`.
 
-The publicly available **code** and newly created **dataset CA-2022-S2-NAIP** are being compiled and uploaded... 
+We thank the editors and reviewers for their work on this paper.
 
-expected to be completed within two business days: **March 3 and March 4, 2026**
+You can find our CDEHAT model architecture and training framework codes in the `SR` folder; you can also visualize the Local Attribution Map (LAM) of SR models in `LAM` folder.
 
-**Finally, we thank the editors and reviewers for their work on this paper.**
-
-You can find our **CDEHAT model architecture and training framework** in the **CDEHAT/SR** folder; you can also compare the **local attribution map* of different models in **CDEHAT/LAM**. (The README document for this project is still being further refined and improved.)
-
-Our **CA-2022-S2-NAIP** is currently being uploaded, and the process is expected to be completed by March 4, 2026.
+Our `CA-2022-S2-NAIP` is currently being uploaded, and the process is expected to be completed by March 4, 2026.
 
 
 ## <a name="installation"></a>:gear:Installation
