@@ -17,3 +17,5 @@ expected to be completed within two business days: **March 3 and March 4, 2026**
 <p align="center">
     <img src="assets/CDEHAT.png" style="border-radius: 15px">
 </p>
+
+You can find our CDEHAT model architecture and training framework in the CDEHAT/SR folder; you can also compare the local attribution graphs of different models in CDEHAT/LAM.
