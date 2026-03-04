@@ -2,14 +2,17 @@
     <img src="assets/logo.png" width="500">
 </p>
 
+
 ## CDEHAT: Conditional Diffusion-Assisted Enhanced Hybrid Attention Transformer for Remote Sensing Imagery Super-Resolution
 
 [Paper]() | [Project Page]()
+
 
 ## <a name="update"></a>:dna:Network
 <p align="center">
     <img src="assets/CDEHAT.png"  width="700">
 </p>
+
 
 ## :book:Table Of Contents
 
@@ -21,8 +24,13 @@
 
 
 ## <a name="visual_results"></a>:eyes:Visual Results Display
+
+### Visual on AID
  ![image](/assets/DOTA_image.png)
-  ![image](/assets/CA-2022-S2-NAIP_image.png)
+
+### Visual on CA-2022-S2-NAIP
+![image](/assets/CA-2022-S2-NAIP_image.png)
+
 
 ## <a name="update"></a>:new:Update
 Our paper was accepted on **March 3, 2026**.
@@ -35,6 +43,7 @@ expected to be completed within two business days: **March 3 and March 4, 2026**
 
 - **2026.03.03**: The paper is accepted.
 - **2025.12.02**: This repo is released.
+
 
 ## <a name="installation"></a>:gear:Installation
 ```shell
@@ -51,6 +60,7 @@ pip install -r requirements.txt
 cd SR
 ```
 
+
 ## <a name="quick_start"></a>:flight_departure:Quick Start
 
 Download demo_v1.0.0 [temp.pth](https://github.com/cerulean136/CDEHAT/releases/download/demo_v1.0.0/temp.pth) to `weights/`, then run the following command to begin the model inference demonstration.
@@ -58,6 +68,7 @@ Download demo_v1.0.0 [temp.pth](https://github.com/cerulean136/CDEHAT/releases/d
 python -m super_resolution.test -opt super_resolution/options/test/test_Real_CDEHAT_GAN_SRx4_trained_on_AID.yml
 ```
 Alternatively, you can run our script `begin_test_in_run_window.py` to quickly perform model inference.
+
 
 ## 🎁 Dataset
 Please download the following remote sensing benchmarks:
@@ -122,13 +133,16 @@ Our **CA-2022-S2-NAIP** is currently being uploaded, and the process is expected
 
 Please download the weights we **released** and place them in your local folder **CDEHAT/SR/weights**. Then, navigate to the configuration file **CDEHAT/SR/super_resolution/options/test/test_Real_CDEHAT_GAN_SRx4_trained_on_AID.yml** and ensure the weight path is correct: **pretrain_network_g: .\weights\temp.pth**. Afterward, you can run **CDEHAT/SR/begin_test_in_run_window.py** to obtain the SR results for the demo image **CDEHAT/SR/demo/demo.jpg**. You can also reconstruct **your own remote sensing data** by changing the data folder path in the configuration file.
 
+
 ## Acknowledgement
 
 This project is based on [HAT](https://github.com/XPixelGroup/HAT), [DiffIR](https://github.com/Zj-BinXia/DiffIR) and [BasicSR](https://github.com/XPixelGroup/BasicSR). Thanks for their awesome work.
 
+
 ## Contact
 
 If you have any questions, please feel free to contact with me at yangliao@zjut.edu.cn.
+
 
 ## Citation
 
