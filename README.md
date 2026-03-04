@@ -13,3 +13,7 @@ The publicly available **code** and newly created **dataset CA-2022-S2-NAIP** ar
 expected to be completed within two business days: **March 3 and March 4, 2026**
 
 **Finally, we thank the editors and reviewers for their work on this paper.**
+
+<p align="center">
+    <img src="assets/CDEHAT.png" style="border-radius: 15px">
+</p>
