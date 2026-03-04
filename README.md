@@ -18,6 +18,13 @@
 ## <a name="visual_results"></a>:eyes:Visual Results Display
 
 ## <a name="update"></a>:new:Update
+Our paper was accepted on **March 3, 2026**.
+
+The publicly available **code** and newly created **dataset CA-2022-S2-NAIP** are being compiled and uploaded... 
+
+expected to be completed within two business days: **March 3 and March 4, 2026**
+
+**Finally, we thank the editors and reviewers for their work on this paper.**
 
 - **2026.03.03**: The paper is accepted.
 - **2025.12.02**: This repo is released.
@@ -49,13 +56,7 @@ Alternatively, you can run our script `begin_test_in_run_window.py` to quickly p
 
 
 
-Our paper was accepted on **March 3, 2026**.
 
-The publicly available **code** and newly created **dataset CA-2022-S2-NAIP** are being compiled and uploaded... 
-
-expected to be completed within two business days: **March 3 and March 4, 2026**
-
-**Finally, we thank the editors and reviewers for their work on this paper.**
 
 <p align="center">
     <img src="assets/CDEHAT.png" style="border-radius: 15px">
