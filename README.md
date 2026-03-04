@@ -10,7 +10,6 @@
 
 - [Visual Results Display](#visual_results)
 - [Installation](#installation)
-- [Pretrained Models](#pretrained_models)
 - [Quick Start (gradio demo)](#quick_start)
 - [Inference](#inference)
 - [Train](#train)
@@ -18,7 +17,10 @@
 
 ## <a name="visual_results"></a>:eyes:Visual Results Display
 
+## <a name="update"></a>:new:Update
 
+- **2026.03.03**: The article is accepted.
+- **2025.12.02**: This repo is released.
 
 ## <a name="installation"></a>:gear:Installation
 ```shell
@@ -35,7 +37,7 @@ pip install -r requirements.txt
 cd SR
 ```
 
-
+## <a name="quick_start"></a>:flight_departure:Quick Start
 
 
 
