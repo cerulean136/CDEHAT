@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="assets/logo.jpg" width="400">
+    <img src="assets/logo.png" width="500">
 </p>
 
 ## CDEHAT: Conditional Diffusion-Assisted Enhanced Hybrid Attention Transformer for Remote Sensing Imagery Super-Resolution
