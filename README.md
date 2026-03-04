@@ -71,6 +71,18 @@ Please download the following remote sensing benchmarks:
 |Testing | [Download](https://captain-whu.github.io/AID/) | [Download](https://captain-whu.github.io/DOTA/dataset.html) | [Download](https://drive.google.com/drive/folders/1UdlgHk49iu6WpcJ5467iT-UqNPpx__CC) | [Download](https://www.kaggle.com/datasets/abdulhasibuddin/uc-merced-land-use-dataset) | [Download](https://www.kaggle.com/datasets/sunray2333/whurs191) | [Download]() | 
 
 
+## <a name="inference"></a>:crossed_swords:Inference
+
+Refer to `./super_resolution/options/test` for the configuration file of the model to be tested, and prepare the testing data and pretrained model.  
+Then run the following codes (taking `temp.pth` as an example):
+```shell
+cd SR
+python -m super_resolution.test -opt -opt super_resolution/options/test/test_Real_CDEHAT_GAN_SRx4_trained_on_AID.yml
+```
+The testing results will be saved in the `./results` folder.  
+
+
+
 ## <a name="train"></a>:stars:Train
 
 ### Stage 1
