@@ -21,6 +21,8 @@
 
 
 ## <a name="visual_results"></a>:eyes:Visual Results Display
+ ![image](/assets/DOTA_image.png)
+  ![image](/assets/CA-2022-S2-NAIP_image.png)
 
 ## <a name="update"></a>:new:Update
 Our paper was accepted on **March 3, 2026**.
