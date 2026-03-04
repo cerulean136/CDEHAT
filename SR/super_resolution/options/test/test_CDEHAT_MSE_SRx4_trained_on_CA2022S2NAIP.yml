@@ -32,7 +32,7 @@ network_g:
   out_chans: 4
   num_feat: 64
   embed_dim: 180
-  depths: [ 6, 6, 6, 6, 6, 6 ]
+  depths: [ 4, 4, 4, 4, 4, 4 ]
   num_heads: [ 6, 6, 6, 6, 6, 6 ]
   window_size: 16
   mlp_ratio: 2
@@ -75,3 +75,4 @@ val: # use val setting
 
   # metrics.
   metrics:
+
