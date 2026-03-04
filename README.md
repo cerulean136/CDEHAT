@@ -51,7 +51,7 @@ cd SR
 ```
 
 
-## <a name="quick_start (recommend)"></a>:flight_departure:Quick Start
+## <a name="quick_start"></a>:flight_departure:Quick Start
 
 Download [temp.pth](https://github.com/cerulean136/CDEHAT/releases/download/demo_v1.0.0/temp.pth) to `weights/`, then run the following command to begin the model inference demonstration.
 ```shell
