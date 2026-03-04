@@ -13,6 +13,8 @@
     <img src="assets/CDEHAT.png"  width="900">
 </p>
 
+[Model architecture is located in](Model architecture is located in)
+
 
 ## :book:Table Of Contents
 
