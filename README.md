@@ -6,6 +6,12 @@
 
 [Paper]() | [Project Page]()
 
+:dna:
+## <a name="update"></a>:dna:Network
+<p align="center">
+    <img src="assets/CDEHAT.png" style="border-radius: 15px" width="600">
+</p>
+
 ## :book:Table Of Contents
 
 - [Visual Results Display](#visual_results)
@@ -58,9 +64,7 @@ Alternatively, you can run our script `begin_test_in_run_window.py` to quickly p
 
 
 
-<p align="center">
-    <img src="assets/CDEHAT.png" style="border-radius: 15px">
-</p>
+
 
 
 
