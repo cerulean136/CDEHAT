@@ -19,7 +19,7 @@
 
 ## <a name="update"></a>:new:Update
 
-- **2026.03.03**: The article is accepted.
+- **2026.03.03**: The paper is accepted.
 - **2025.12.02**: This repo is released.
 
 ## <a name="installation"></a>:gear:Installation
@@ -39,6 +39,7 @@ cd SR
 
 ## <a name="quick_start"></a>:flight_departure:Quick Start
 
+Download [demo_v1.0.0.pth](https://github.com/cerulean136/CDEHAT/releases/download/demo_v1.0.0/temp.pth) to `weights/`, then run the following command to begin the reasoning demonstration.
 
 
 
