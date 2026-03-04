@@ -105,7 +105,7 @@ network_g:
 
 #-- paths. --#
 path:
-  pretrain_network_g: C:\pythonProject\SR\weights\temp.pth  # Simple and easy-to-use weights for getting started and debugging code.
+  pretrain_network_g: .\weights\temp.pth  # Simple and easy-to-use weights for getting started and debugging code.
   param_key_g: params_ema
   strict_load_g: True
 
@@ -119,5 +119,6 @@ val: # use val setting
 
   # metrics.
   metrics:
+
 
 
