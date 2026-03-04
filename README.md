@@ -21,7 +21,19 @@
 
 
 ## <a name="installation"></a>:gear:Installation
+```shell
+# clone this repo
+git clone https://github.com/cerulean136/CDEHAT.git
+cd CDEHAT
 
+# create an environment with python >= 3.9
+conda create -n cdehat python=3.9
+conda activate cdehat
+pip install -r requirements.txt
+
+# enter SR directory
+cd SR
+```
 
 
 
