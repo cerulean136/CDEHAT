@@ -94,15 +94,24 @@ Please note that the test configuration file parameters `dataroot_gt` and `datar
 
 ### Stage 1
 
-First, we train a EncoderHR, which will be used for guid degradation removal during the training of stage 2.
+First, we train a EncoderHR, which will be used for guid content and degradation during the training of stage 2.
 
 <a name="gen_file_list"></a>
 1. Generate file list of training set and validation set, a file list looks like:
 
     ```txt
-    /path/to/image_1
-    /path/to/image_2
-    /path/to/image_3
+    /train/
+        category 1/image_1
+        category 1/image_2
+        ...
+        category 2/image_1
+        ...
+    /val/
+        category 1/image_3
+        category 1/image_4
+        ...
+        category 2/image_2
+        ...
     ...
     ```
 
