@@ -42,7 +42,7 @@ datasets:
   test_0:
     name: RealWorld
     type: RealWorldDataset
-    dataroot_lq: .\demo # The path you want for super-resolution
+    dataroot_lq:
     suffix: [ .tif, .png, .jpg ]
     io_backend:
       type: disk
@@ -105,7 +105,7 @@ network_g:
 
 #-- paths. --#
 path:
-  pretrain_network_g: .\weights\temp.pth  # Simple and easy-to-use weights for getting started and debugging code.
+  pretrain_network_g:
   param_key_g: params_ema
   strict_load_g: True
 
@@ -119,6 +119,7 @@ val: # use val setting
 
   # metrics.
   metrics:
+
 
 
 
