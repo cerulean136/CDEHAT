@@ -146,7 +146,7 @@ Please note that the test configuration file parameters `dataroot_gt` and `datar
 
 ## <a name="visual_results"></a>:eyes:Visual Results Display
 
-### Visual on AID
+### Visual on DOTA
  ![image](/assets/DOTA_image.png)
 
 ### Visual on CA-2022-S2-NAIP
