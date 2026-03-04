@@ -94,9 +94,8 @@ Please note that the test configuration file parameters `dataroot_gt` and `datar
 
 ### Stage 1
 
-First, we train a EncoderHR, which will be used for guid content and degradation during the training of stage 2.
+First, we train a EncoderHR, which will be used to guid learning content and degradation during the training of stage 2.
 
-<a name="gen_file_list"></a>
 1. Determine the paths to the training and validation sets, as well as the file types to use. For example:
 
     ```txt
@@ -120,11 +119,16 @@ First, we train a EncoderHR, which will be used for guid content and degradation
 
 2. Fill in the [training configuration file](SR/super_resolution/options/train/train_CDEHAT_MSE_SRx4_trained_on_AID.yml) with appropriate values. `dataroot_gt` and `suffix`. (The training configuration file must have the `dataroot_gt` parameter. `dataroot_lq` can be omitted; when omitted, it defaults to generating LQ images from the ground truth (GT) images during training.)
 
-3. Start training!
+3. A suitable `encoder_iter` is determined by the training set size and the number of iterations, which is the number of training iterations in the first stage. 
+
+4. Start training!
 
     ```shell
+    cd SR
     python -m super_resolution.train -opt super_resolution/options/train/train_CDEHAT_MSE_SRx4_trained_on_AID.yml
     ```
+
+    Alternatively, you can run our script `begin_train_in_run_window.py` to quickly perform model training.
 
 ### Stage 2
 
