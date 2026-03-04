@@ -131,7 +131,7 @@ First, we train a EncoderHR, which will be used to guid the training of stage 2.
 
 ### Stage 2
 
-1. To obtain the pre-trained model weights for stage 1, change the configuration file parameter `pretrain_network_g` to the path where the weights are located.
+1. Change the configuration file parameter `pretrain_network_g` to the model weight path for stage 1.
 
 2. Change the `encoder_iter` configuration parameter to -1.
 
