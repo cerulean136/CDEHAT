@@ -149,19 +149,19 @@ class PTA(nn.Module):
 
     def forward(self, x, h_patch_size=160, w_patch_size=160):
         b, C, h, w = x.shape
-        # 调整块大小
+
         if h < h_patch_size:
             h_patch_size = h
         if w < w_patch_size:
             w_patch_size = w
 
-        # 填充为块的整数倍
+
         pad_h = (h_patch_size - h % h_patch_size) % h_patch_size
         pad_w = (w_patch_size - w % w_patch_size) % w_patch_size
         if pad_h > 0 or pad_w > 0:
             x = torch.nn.functional.pad(x, (0, pad_w, 0, pad_h))
 
-        # 先qkv映射，然后分块
+
         qkv = self.qkv_dwconv(self.qkv_conv(x))
         q, k, v = qkv.chunk(3, dim=1)
         q = rearrange(q, 'b c (h_n h_ps) (w_n w_ps) -> (b h_n w_n) (h_ps w_ps) c',
@@ -181,7 +181,7 @@ class PTA(nn.Module):
                         h_ps=h_patch_size, w_ps=w_patch_size)
         out = self.proj(out)
 
-        # 取消填充
+
         if pad_h > 0 or pad_w > 0:
             out = out[:, :, :h, :w]
 
@@ -1678,3 +1678,4 @@ class CDEHAT(nn.Module):
         x = self.norm(x)
         x = self.patch_unembed(x, x_size)  # b, embed_dim, h, w
         return x
+
