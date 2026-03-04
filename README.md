@@ -59,9 +59,9 @@ Alternatively, you can run our script `begin_test_in_run_window.py` to quickly p
 
 ## 🎁 Dataset
 Please download the following remote sensing benchmarks:
-| Data Type | [AID](https://captain-whu.github.io/AID/) | [DOTA-v1.0](https://captain-whu.github.io/DOTA/dataset.html) | [DIOR](https://www.sciencedirect.com/science/article/pii/S0924271619302825) | [NWPU-RESISC45](https://ieeexplore.ieee.org/abstract/document/7891544)
-| :----: | :-----: | :----: | :----: | :----: |
-|Training | [Download](https://captain-whu.github.io/AID/) | None | None | None |
+| Data Type | [AID](https://captain-whu.github.io/AID/) | [DOTA-v1.0](https://captain-whu.github.io/DOTA/dataset.html) | [DIOR](https://www.sciencedirect.com/science/article/pii/S0924271619302825) | [UC Merced Land Use](https://www.kaggle.com/datasets/abdulhasibuddin/uc-merced-land-use-dataset) | [WHU-RS19](https://www.kaggle.com/datasets/sunray2333/whurs191) | [CA-2022-S2-NAIP]()
+| :----: | :-----: | :----: | :----: | :----: |:----:|:----:|
+|Training | [Download](https://captain-whu.github.io/AID/) | None | None | None | None | Training |[]
 |Testing | [Download](https://captain-whu.github.io/AID/) | [Download](https://captain-whu.github.io/DOTA/dataset.html) | [Download](https://drive.google.com/drive/folders/1UdlgHk49iu6WpcJ5467iT-UqNPpx__CC) | [Download](https://onedrive.live.com/?authkey=%21AHHNaHIlzp%5FIXjs&id=5C5E061130630A68%21107&cid=5C5E061130630A68&parId=root&parQt=sharedby&o=OneUp)
 
 
