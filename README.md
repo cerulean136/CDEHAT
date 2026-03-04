@@ -94,7 +94,7 @@ Please note that the test configuration file parameters `dataroot_gt` and `datar
 
 ### Stage 1
 
-First, we train a EncoderHR, which will be used to guid learning content and degradation during the training of stage 2.
+First, we train a EncoderHR, which will be used to guid the training of stage 2.
 
 1. Determine the paths to the training and validation sets, as well as the file types to use. For example:
 
