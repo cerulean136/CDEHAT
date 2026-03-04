@@ -59,7 +59,58 @@ Alternatively, you can run our script `begin_test_in_run_window.py` to quickly p
 
 
 
+### Stage 1
 
+First, we train a SwinIR, which will be used for degradation removal during the training of stage 2.
+
+<a name="gen_file_list"></a>
+1. Generate file list of training set and validation set, a file list looks like:
+
+    ```txt
+    /path/to/image_1
+    /path/to/image_2
+    /path/to/image_3
+    ...
+    ```
+
+    You can write a simple python script or directly use shell command to produce file lists. Here is an example:
+    
+    ```shell
+    # collect all iamge files in img_dir
+    find [img_dir] -type f > files.list
+    # shuffle collected files
+    shuf files.list > files_shuf.list
+    # pick train_size files in the front as training set
+    head -n [train_size] files_shuf.list > files_shuf_train.list
+    # pick remaining files as validation set
+    tail -n +[train_size + 1] files_shuf.list > files_shuf_val.list
+    ```
+
+2. Fill in the [training configuration file](configs/train/train_stage1.yaml) with appropriate values.
+
+3. Start training!
+
+    ```shell
+    accelerate launch train_stage1.py --config configs/train/train_stage1.yaml
+    ```
+
+### Stage 2
+
+1. Download pretrained [Stable Diffusion v2.1](https://huggingface.co/stabilityai/stable-diffusion-2-1-base) to provide generative capabilities. :bulb:: If you have ran the [inference script](inference.py), the SD v2.1 checkpoint can be found in [weights](weights).
+
+    ```shell
+    wget https://huggingface.co/stabilityai/stable-diffusion-2-1-base/resolve/main/v2-1_512-ema-pruned.ckpt --no-check-certificate
+    ```
+
+2. Generate file list as mentioned [above](#gen_file_list). Currently, the training script of stage 2 doesn't support validation set, so you only need to create training file list.
+
+3. Fill in the [training configuration file](configs/train/train_stage2.yaml) with appropriate values.
+
+4. Start training!
+
+    ```shell
+    accelerate launch train_stage2.py --config configs/train/train_stage2.yaml
+    ```
 
 
 
