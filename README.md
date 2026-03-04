@@ -97,38 +97,28 @@ Please note that the test configuration file parameters `dataroot_gt` and `datar
 First, we train a EncoderHR, which will be used for guid content and degradation during the training of stage 2.
 
 <a name="gen_file_list"></a>
-1. Generate file list of training set and validation set, a file list looks like:
+1. Determine the paths to the training and validation sets, as well as the file types to use. For example:
 
     ```txt
     /train/
-        category 1/image_1
-        category 1/image_2
+        category 1/image_1.jpg
+        category 1/image_2.jpg
         ...
-        category 2/image_1
+        category 2/image_1.jpg
         ...
-    /val/
-        category 1/image_3
-        category 1/image_4
+    /val 1/
+        category a/img_3.png
+        category a/imge_4.png
         ...
-        category 2/image_2
+        category b/img_2.png
         ...
-    ...
+    /val 2/
+        1.tif
+        2.tif
+        ...
     ```
 
-    You can write a simple python script or directly use shell command to produce file lists. Here is an example:
-    
-    ```shell
-    # collect all iamge files in img_dir
-    find [img_dir] -type f > files.list
-    # shuffle collected files
-    shuf files.list > files_shuf.list
-    # pick train_size files in the front as training set
-    head -n [train_size] files_shuf.list > files_shuf_train.list
-    # pick remaining files as validation set
-    tail -n +[train_size + 1] files_shuf.list > files_shuf_val.list
-    ```
-
-2. Fill in the [training configuration file](SR/super_resolution/options/train/train_CDEHAT_MSE_SRx4_trained_on_AID.yml) with appropriate values.
+2. Fill in the [training configuration file](SR/super_resolution/options/train/train_CDEHAT_MSE_SRx4_trained_on_AID.yml) with appropriate values. `dataroot_gt` and `suffix`. (The training configuration file must have the `dataroot_gt` parameter. `dataroot_lq` can be omitted; when omitted, it defaults to generating LQ images from the ground truth (GT) images during training.)
 
 3. Start training!
 
