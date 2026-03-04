@@ -131,16 +131,20 @@ First, we train a EncoderHR, which will be used to guid the training of stage 2.
 
 ### Stage 2
 
+1. Obtain the pre-trained model weights for stage 1 and write them to the configuration file.
 
+2. Change the `encoder_iter` configuration parameter to -1.
 
+3. Start training!
 
+    ```shell
+    cd SR
+    python -m super_resolution.train -opt super_resolution/options/train/train_CDEHAT_MSE_SRx4_trained_on_AID.yml
+    ```
 
+   Alternatively, you can run our script `begin_train_in_run_window.py` to quickly perform model training.
 
-
-
-
-
-
+4. The final weights can be used for model testing and evaluation.
 
 
 ## <a name="visual_results"></a>:eyes:Visual Results Display
