@@ -22,5 +22,10 @@ test_Real_CDEHAT_MSE_SRx4_trained_on_AID = \
 test_Real_CDEHAT_GAN_SRx4_trained_on_AID = \
     "python -m super_resolution.test -opt super_resolution/options/test/test_Real_CDEHAT_GAN_SRx4_trained_on_AID.yml"
 
+# Demo
+test_demo = \
+    "python -m super_resolution.test -opt super_resolution/options/test/demo.yml"
+
 if __name__ == "__main__":
-    execute_command(test_Real_CDEHAT_GAN_SRx4_trained_on_AID)
+    execute_command(test_demo)
+
