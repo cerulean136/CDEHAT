@@ -1,0 +1,67 @@
+name: demo
+model_type: RealCDEHATGANModel
+scale: 4
+num_gpu: 1
+manual_seed: 0
+
+
+tile:
+  tile_size: 96
+  tile_pad: 16
+
+
+
+datasets:
+  test_0:
+    name: RealWorld
+    type: RealWorldDataset
+    dataroot_lq: .\demo
+    suffix: [ .tif, .png, .jpg ]
+    io_backend:
+      type: disk
+
+
+network_g:
+  type: CDEHAT
+  img_size: 64
+  patch_size: 1
+  in_chans: 3
+  out_chans: 3
+  num_feat: 64
+  embed_dim: 180
+  depths: [ 6, 6, 6, 6, 6, 6 ]
+  num_heads: [ 6, 6, 6, 6, 6, 6 ]
+  window_size: 16
+  mlp_ratio: 2
+  use_checkpoint: False
+  compress_ratio: 3
+  squeeze_factor: 30
+  conv_scale: 0.01
+  overlap_ratio: 0.5
+  upscale: 4
+  resi_connection: 1conv
+  downsampler: patchmerging
+  upsampler: pixelshuffle
+  mean: [ 0.3959, 0.4074, 0.3666 ]
+  cdp_feat: 3
+  use_cdp: True
+  encoder_iter: -1
+
+
+
+path:
+  pretrain_network_g: .\weights\temp.pth
+  param_key_g: params_ema
+  strict_load_g: True
+
+
+val:
+  save_img: True
+  pbar: True
+  suffix: ~
+  tif: True
+
+  metrics:
+
+
+
