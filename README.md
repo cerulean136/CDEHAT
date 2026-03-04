@@ -20,8 +20,8 @@ The model architecture is located [here](SR/super_resolution/archs/cdehat_arch.p
 
 - [Installation](#installation)
 - [Quick Start](#quick_start)
-- [Inference](#inference)
 - [Train](#train)
+- [Inference](#inference)
 - [Visual Results Display](#visual_results)
 
 
