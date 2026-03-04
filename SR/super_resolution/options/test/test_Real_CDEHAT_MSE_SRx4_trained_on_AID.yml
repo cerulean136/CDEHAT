@@ -42,7 +42,7 @@ datasets:
   test_0:
     name: RealWorld
     type: RealWorldDataset
-    dataroot_lq: C:\pythonProject\SR\temp # The path you want for super-resolution
+    dataroot_lq:
     suffix: [ .tif, .png, .jpg ]
     io_backend:
       type: disk
@@ -119,5 +119,6 @@ val: # use val setting
 
   # metrics.
   metrics:
+
 
 
