@@ -55,7 +55,7 @@ def test_pipeline(root_path):
     logger.info(f'Start testing:')
     if opt.get('val') is not None:
         for test_dataloader in test_dataloaders:
-            model.validation(dataloader=test_dataloader, current_iter=99999999, tb_logger=None,
+            model.validation(dataloader=test_dataloader, current_iter=float('inf'), tb_logger=None,
                              save_img=opt['val'].get('save_img', True))
     else:
         raise ValueError('No val option were added')
@@ -64,3 +64,4 @@ def test_pipeline(root_path):
 if __name__ == "__main__":
     root_path = osp.normpath(osp.abspath(osp.join(__file__, osp.pardir, osp.pardir)))
     test_pipeline(root_path)
+
