@@ -6,10 +6,9 @@
 
 [Paper]() | [Project Page]()
 
-:dna:
 ## <a name="update"></a>:dna:Network
 <p align="center">
-    <img src="assets/CDEHAT.png" style="border-radius: 15px" width="600">
+    <img src="assets/CDEHAT.png"  width="1200">
 </p>
 
 ## :book:Table Of Contents
