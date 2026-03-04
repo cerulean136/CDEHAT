@@ -32,10 +32,9 @@ expected to be completed within two business days: **March 3 and March 4, 2026**
 
 **Finally, we thank the editors and reviewers for their work on this paper.**
 
-<!--
-- **2026.03.03**: The paper is accepted.
-- **2025.12.02**: This repo is released.
--->
+You can find our **CDEHAT model architecture and training framework** in the **CDEHAT/SR** folder; you can also compare the **local attribution map* of different models in **CDEHAT/LAM**. (The README document for this project is still being further refined and improved.)
+
+Our **CA-2022-S2-NAIP** is currently being uploaded, and the process is expected to be completed by March 4, 2026.
 
 
 ## <a name="installation"></a>:gear:Installation
@@ -140,13 +139,8 @@ First, we train a EncoderHR, which will be used to guid the training of stage 2.
 
 
 
-You can find our **CDEHAT model architecture and training framework** in the **CDEHAT/SR** folder; you can also compare the **local attribution map* of different models in **CDEHAT/LAM**. (The README document for this project is still being further refined and improved.)
-
-Our **CA-2022-S2-NAIP** is currently being uploaded, and the process is expected to be completed by March 5, 2026.
 
 
-
-Please download the weights we **released** and place them in your local folder **CDEHAT/SR/weights**. Then, navigate to the configuration file **CDEHAT/SR/super_resolution/options/test/test_Real_CDEHAT_GAN_SRx4_trained_on_AID.yml** and ensure the weight path is correct: **pretrain_network_g: .\weights\temp.pth**. Afterward, you can run **CDEHAT/SR/begin_test_in_run_window.py** to obtain the SR results for the demo image **CDEHAT/SR/demo/demo.jpg**. You can also reconstruct **your own remote sensing data** by changing the data folder path in the configuration file.
 
 
 ## <a name="visual_results"></a>:eyes:Visual Results Display
