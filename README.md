@@ -16,11 +16,11 @@
 
 ## :book:Table Of Contents
 
-- [Visual Results Display](#visual_results)
 - [Installation](#installation)
 - [Quick Start](#quick_start)
 - [Inference](#inference)
 - [Train](#train)
+- [Visual Results Display](#visual_results)
 
 
 ## <a name="update"></a>:new:Update
