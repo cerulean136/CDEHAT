@@ -9,7 +9,9 @@
 
 
 ## <a name="update"></a>:dna:Network
- ![image](/assets/CDEHAT.png)
+ <p align="center">
+    <img src="assets/CDEHAT.png"  width="900">
+</p>
 
 
 ## :book:Table Of Contents
