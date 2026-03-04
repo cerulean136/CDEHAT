@@ -68,25 +68,6 @@ Please download the following remote sensing benchmarks:
 |Testing | [Download](https://captain-whu.github.io/AID/) | [Download](https://captain-whu.github.io/DOTA/dataset.html) | [Download](https://drive.google.com/drive/folders/1UdlgHk49iu6WpcJ5467iT-UqNPpx__CC) | [Download](https://www.kaggle.com/datasets/abdulhasibuddin/uc-merced-land-use-dataset) | [Download](https://www.kaggle.com/datasets/sunray2333/whurs191) | [Download]() | 
 
 
-## <a name="inference"></a>:crossed_swords:Inference
-
-Refer to `./super_resolution/options/test` for the configuration file of the model to be tested, and prepare the testing data and pretrained model.  
-
-Then run the following codes:
-
-```shell
-cd SR
-python -m super_resolution.test -opt -opt super_resolution/options/test/test_CDEHAT_MSE_SRx4_trained_on_AID.yml
-```
-
-Alternatively, you can run our script `begin_test_in_run_window.py` to quickly perform model inference.
-
-The testing results will be saved in the `./results` folder.  
-
-Please note that the test configuration file parameters `dataroot_gt` and `dataroot_lq` are used individually. When using `dataroot_gt`, the ground truth (GT) images for the test set are automatically generated into lq images by the data processing flow during the test. When using `dataroot_lq`, the test images are the lq images for the test set.
-
-
-
 ## <a name="train"></a>:stars:Train
 
 ### Stage 1
@@ -143,6 +124,24 @@ First, we train a EncoderHR, which will be used to guid the training of stage 2.
    Alternatively, you can run our script `begin_train_in_run_window.py` to quickly perform model training.
 
 4. The final weights can be used for model testing and evaluation.
+
+
+## <a name="inference"></a>:crossed_swords:Inference
+
+Refer to `./super_resolution/options/test` for the configuration file of the model to be tested, and prepare the testing data and pretrained model.  
+
+Then run the following codes:
+
+```shell
+cd SR
+python -m super_resolution.test -opt -opt super_resolution/options/test/test_CDEHAT_MSE_SRx4_trained_on_AID.yml
+```
+
+Alternatively, you can run our script `begin_test_in_run_window.py` to quickly perform model inference.
+
+The testing results will be saved in the `./results` folder.  
+
+Please note that the test configuration file parameters `dataroot_gt` and `dataroot_lq` are used individually. When using `dataroot_gt`, the ground truth (GT) images for the test set are automatically generated into lq images by the data processing flow during the test. When using `dataroot_lq`, the test images are the lq images for the test set.
 
 
 ## <a name="visual_results"></a>:eyes:Visual Results Display
