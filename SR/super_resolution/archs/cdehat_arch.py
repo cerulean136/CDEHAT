@@ -1368,7 +1368,7 @@ class BasicBlock(nn.Module):
         x = self.gehab(x, x_size=x_size, rpi=params['rpi_sowsa'], attn_mask=params['attn_mask_sowsa'], cdp=cdp)
         return x
 
-
+# DRAG
 class DeepResidualAttentionGroup(nn.Module):
     def __init__(self,
                  img_size, patch_size,
@@ -1678,5 +1678,6 @@ class CDEHAT(nn.Module):
         x = self.norm(x)
         x = self.patch_unembed(x, x_size)  # b, embed_dim, h, w
         return x
+
 
 
