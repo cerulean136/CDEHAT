@@ -72,11 +72,11 @@ Please download the following remote sensing benchmarks:
 
 Refer to `./super_resolution/options/test` for the configuration file of the model to be tested, and prepare the testing data and pretrained model.  
 
-Then run the following codes (taking `temp.pth` as an example):
+Then run the following codes:
 
 ```shell
 cd SR
-python -m super_resolution.test -opt -opt super_resolution/options/test/test_Real_CDEHAT_GAN_SRx4_trained_on_AID.yml
+python -m super_resolution.test -opt -opt super_resolution/options/test/test_CDEHAT_MSE_SRx4_trained_on_AID.yml
 ```
 
 Alternatively, you can run our script `begin_test_in_run_window.py` to quickly perform model inference.
