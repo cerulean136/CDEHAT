@@ -3,6 +3,10 @@
 ***CDEHAT: Conditional Diffusion-Assisted Enhanced Hybrid Attention Transformer for Remote Sensing Imagery Super-Resolution***
 
 
-We will release our code after the paper is accepted.
+Our paper was accepted on March 3, 2026.
 
-In addition, the new dataset CA-2022-S2-NAIP is being prepared for uploading.
+The publicly available code and newly created dataset CA-2022-S2-NAIP are being compiled and uploaded... 
+
+expected to be completed within two business days: March 3-3 and March 4, 2026
+
+Finally, we thank the editors and reviewers for their work on this paper.
