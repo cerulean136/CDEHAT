@@ -133,6 +133,14 @@ If you have any questions, please feel free to contact with me at yangliao@zjut.
 Please cite us if our work is useful for your research.
 
 ```
-@article{
+@ARTICLE{,
+  author={},
+  journal={}, 
+  title={}, 
+  year={},
+  volume={},
+  number={},
+  pages={},
+  doi={}
 }
 ```
