@@ -61,7 +61,7 @@ Alternatively, you can run our script `begin_test_in_run_window.py` to quickly p
 
 ### Stage 1
 
-First, we train a SwinIR, which will be used for degradation removal during the training of stage 2.
+First, we train a EncoderHR, which will be used for guid degradation removal during the training of stage 2.
 
 <a name="gen_file_list"></a>
 1. Generate file list of training set and validation set, a file list looks like:
@@ -86,31 +86,17 @@ First, we train a SwinIR, which will be used for degradation removal during the 
     tail -n +[train_size + 1] files_shuf.list > files_shuf_val.list
     ```
 
-2. Fill in the [training configuration file](configs/train/train_stage1.yaml) with appropriate values.
+2. Fill in the [training configuration file](SR/super_resolution/options/train/train_CDEHAT_MSE_SRx4_trained_on_AID.yml) with appropriate values.
 
 3. Start training!
 
     ```shell
-    accelerate launch train_stage1.py --config configs/train/train_stage1.yaml
+    python -m super_resolution.train -opt super_resolution/options/train/train_CDEHAT_MSE_SRx4_trained_on_AID.yml
     ```
 
 ### Stage 2
 
-1. Download pretrained [Stable Diffusion v2.1](https://huggingface.co/stabilityai/stable-diffusion-2-1-base) to provide generative capabilities. :bulb:: If you have ran the [inference script](inference.py), the SD v2.1 checkpoint can be found in [weights](weights).
 
-    ```shell
-    wget https://huggingface.co/stabilityai/stable-diffusion-2-1-base/resolve/main/v2-1_512-ema-pruned.ckpt --no-check-certificate
-    ```
-
-2. Generate file list as mentioned [above](#gen_file_list). Currently, the training script of stage 2 doesn't support validation set, so you only need to create training file list.
-
-3. Fill in the [training configuration file](configs/train/train_stage2.yaml) with appropriate values.
-
-4. Start training!
-
-    ```shell
-    accelerate launch train_stage2.py --config configs/train/train_stage2.yaml
-    ```
 
 
 
