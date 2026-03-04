@@ -1,0 +1,246 @@
+#-- general settings. --#
+name: train_TempEE_Real_GAN_SRx4_on_AID
+model_type: RealCDEHATGANModel
+scale: 4
+num_gpu: 1 # auto
+manual_seed: 0
+
+
+
+
+# ----------------- options for synthesizing training data in RealESRNetModel ----------------- #
+# USM the ground-truth
+l1_gt_usm: True
+percep_gt_usm: True
+gan_gt_usm: False
+
+# the first degradation process
+resize_prob: [ 0.2, 0.7, 0.1 ]  # up, down, keep
+resize_range: [ 0.15, 1.5 ]
+gaussian_noise_prob: 0.5
+noise_range: [ 1, 30 ]
+poisson_scale_range: [ 0.05, 3 ]
+gray_noise_prob: 0.4
+jpeg_range: [ 30, 95 ]
+
+# the second degradation process
+second_blur_prob: 0.8
+resize_prob2: [ 0.3, 0.4, 0.3 ]  # up, down, keep
+resize_range2: [ 0.3, 1.2 ]
+gaussian_noise_prob2: 0.5
+noise_range2: [ 1, 25 ]
+poisson_scale_range2: [ 0.05, 2.5 ]
+gray_noise_prob2: 0.4
+jpeg_range2: [ 30, 95 ]
+
+gt_size: 256
+queue_size: 180
+
+#-- dataset and dataloader setting. --#
+datasets:
+  # train dataset
+  train:
+    name: AID
+    type: RealWorldDataset
+    dataroot_gt: C:\python_projects\SR\datasets\AID_division\train
+    suffix: [ .tif, .png, .jpg ]
+    meta_info_file: ~
+    io_backend:
+      type: disk
+
+    gt_size: 256
+    use_hflip: True
+    use_rot: True
+
+    # synthetic
+    blur_kernel_size: 21
+    kernel_list: [ 'iso', 'aniso', 'generalized_iso', 'generalized_aniso', 'plateau_iso', 'plateau_aniso' ]
+    kernel_prob: [ 0.45, 0.25, 0.12, 0.03, 0.12, 0.03 ]
+    sinc_prob: 0.1
+    blur_sigma: [ 0.2, 3 ]
+    betag_range: [ 0.5, 4 ]
+    betap_range: [ 1, 2 ]
+
+    blur_kernel_size2: 21
+    kernel_list2: [ 'iso', 'aniso', 'generalized_iso', 'generalized_aniso', 'plateau_iso', 'plateau_aniso' ]
+    kernel_prob2: [ 0.45, 0.25, 0.12, 0.03, 0.12, 0.03 ]
+    sinc_prob2: 0.1
+    blur_sigma2: [ 0.2, 1.5 ]
+    betag_range2: [ 0.5, 4 ]
+    betap_range2: [ 1, 2 ]
+
+    final_sinc_prob: 0.8
+
+    # dataloader
+    use_shuffer: True
+    num_worker_per_gpu: 6
+    batch_size_per_gpu: 4
+    dataset_enlarge_ratio: 1
+    prefetch_mode: ~
+
+  # val dataset
+  val_0:
+    name: AID_val
+    type: AIDDataset
+    dataroot_gt: C:\python_projects\SR\datasets\AID_division\val
+    suffix: .png
+    io_backend:
+      type: disk
+
+
+
+#-- network structures. --#
+# generator.
+network_g:
+  type: CDEHAT
+  img_size: 64
+  patch_size: 1
+  in_chans: 3
+  out_chans: 3
+  num_feat: 64
+  embed_dim: 180
+  depths: [ 6, 6, 6, 6, 6, 6 ]
+  num_heads: [ 6, 6, 6, 6, 6, 6 ]
+  window_size: 16
+  mlp_ratio: 2
+  use_checkpoint: False
+  compress_ratio: 3
+  squeeze_factor: 30
+  conv_scale: 0.01
+  overlap_ratio: 0.5
+  upscale: 4
+  resi_connection: 1conv
+  downsampler: patchmerging
+  upsampler: pixelshuffle
+  mean: [ 0.3959, 0.4074, 0.3666 ] # For AID dataset.
+
+  cdp_feat: 3 # Number of CDP feature map channels, default value
+  use_cdp: True
+  encoder_iter: -1
+  # WARNING!!!!
+  # When training the first phase, this value("encoder_iter") should be set to the number of iterations
+  # for the first phase. When the first phase is completed and the weights from the first phase are used
+  # to train the second phase, this value should be set to -1.
+  # e.g.: 123456 iters for first phase, -1 iters for second phase. Please determine based on the dataset training
+  # epochs and number of iterations.
+
+
+
+# discriminator.
+network_d:
+  type: UNetDiscriminatorSN
+  num_in_ch: 3
+  num_feat: 64
+  skip_connection: True
+
+
+#-- paths. --#
+path:
+  resume_state: ~
+
+  pretrain_network_g:
+  param_key_g: params_ema
+  strict_load_g: True
+
+
+
+#-- training settings. --#
+train:
+  ema_decay: 0.999
+
+  # optimizer.
+  optim_g:
+    type: Adam
+    lr: !!float 1e-4
+    weight_decay: 0
+    betas: [ 0.9, 0.99 ]
+
+  optim_d:
+    type: Adam
+    lr: !!float 1e-4
+    weight_decay: 0
+    betas: [ 0.9, 0.99 ]
+
+  # scheduler.
+  scheduler:
+    type: MultiStepLR
+    milestones: [ ]
+    gamma: 0.5
+
+  total_iter: 320000
+  warmup_iter: -1  # No warm up.
+
+  net_d_iters: 1
+  net_d_init_iters: 0
+
+  # losses.
+  # l1 loss
+  pixel_opt:
+    type: L1Loss
+    loss_weight: 1.0
+    reduction: mean
+
+  # perceptual loss
+  perceptual_opt:
+    type: PerceptualLoss
+    layer_weights:
+      # before relu
+      'conv1_2': 0.1
+      'conv2_2': 0.1
+      'conv3_4': 1
+      'conv4_4': 1
+      'conv5_4': 1
+    vgg_type: vgg19
+    use_input_norm: True
+    perceptual_weight: 1.0
+    style_weight: 0
+    range_norm: False
+    criterion: l1
+
+  # gan loss
+  gan_opt:
+    type: GANLoss
+    gan_type: vanilla
+    real_label_val: 1.0
+    fake_label_val: 0.0
+    loss_weight: 0.1
+
+
+#-- validation settings. --#
+val:
+  val_freq: !!float 5e3
+  save_img: True
+  pbar: True
+
+  # metrics.
+  metrics:
+    psnr:
+      type: calculate_psnr
+      crop_border: 4
+      test_y_channel: True
+      better: higher
+
+    ssim:
+      type: calculate_ssim
+      crop_border: 4
+      test_y_channel: True
+      better: higher
+
+
+#-- logging settings. --#
+logger:
+  print_freq: !!float 2e1
+  save_checkpoint_freq: !!float 5e3
+  use_tb_logger: True
+
+  # weight & bais.
+  wandb:
+    project: ~
+    resume_id: ~
+
+
+#-- dist training settings. --#
+dist_params:
+  backend: nccl
+  port: 29500
+

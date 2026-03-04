@@ -1,0 +1,122 @@
+#-- general settings. --#
+name: test_Real_CDEHAT_MSE_SRx4_trained_on_AID
+model_type: RealCDEHATMSEModel
+scale: 4
+num_gpu: 1 # auto
+manual_seed: 0
+
+
+tile: # Crop large-size lq images into tiles to save GPU memory.
+  tile_size: 96
+  tile_pad: 16
+
+# ----------------- options for synthesizing training data in RealESRNetModel ----------------- #
+gt_usm: True  # USM the ground-truth
+
+# the first degradation process
+resize_prob: [ 0.0, 0.7, 0.0 ]  # up, down, keep
+resize_range: [ 0.5, 1 ]
+gaussian_noise_prob: 0.5
+noise_range: [ 1, 20 ]
+poisson_scale_range: [ 0.05, 3 ]
+gray_noise_prob: 0.4
+jpeg_range: [ 30, 95 ]
+
+# the second degradation process
+second_blur_prob: 0.8
+resize_prob2: [ 0.0, 0.7, 0.0 ]  # up, down, keep
+resize_range2: [ 0.5, 1 ]
+gaussian_noise_prob2: 0.5
+noise_range2: [ 1, 20 ]
+poisson_scale_range2: [ 0.05, 2.5 ]
+gray_noise_prob2: 0.4
+jpeg_range2: [ 30, 95 ]
+
+gt_size: 600
+queue_size: 180
+
+
+#-- dataset and dataloader setting. --#
+datasets:
+  # test dataset
+  test_0:
+    name: RealWorld
+    type: RealWorldDataset
+    dataroot_lq: C:\pythonProject\SR\temp # The path you want for super-resolution
+    suffix: [ .tif, .png, .jpg ]
+    io_backend:
+      type: disk
+
+    # synthetic
+    blur_kernel_size: 21
+    kernel_list: [ 'iso', 'aniso', 'generalized_iso', 'generalized_aniso', 'plateau_iso', 'plateau_aniso' ]
+    kernel_prob: [ 0.45, 0.25, 0.12, 0.03, 0.12, 0.03 ]
+    sinc_prob: 0.1
+    blur_sigma: [ 0.2, 3 ]
+    betag_range: [ 0.5, 4 ]
+    betap_range: [ 1, 2 ]
+
+    blur_kernel_size2: 21
+    kernel_list2: [ 'iso', 'aniso', 'generalized_iso', 'generalized_aniso', 'plateau_iso', 'plateau_aniso' ]
+    kernel_prob2: [ 0.45, 0.25, 0.12, 0.03, 0.12, 0.03 ]
+    sinc_prob2: 0.1
+    blur_sigma2: [ 0.2, 1.5 ]
+    betag_range2: [ 0.5, 4 ]
+    betap_range2: [ 1, 2 ]
+
+    final_sinc_prob: 0.8
+
+
+#-- network structures. --#
+# generator.
+network_g:
+  type: CDEHAT
+  img_size: 64
+  patch_size: 1
+  in_chans: 3
+  out_chans: 3
+  num_feat: 64
+  embed_dim: 180
+  depths: [ 6, 6, 6, 6, 6, 6 ]
+  num_heads: [ 6, 6, 6, 6, 6, 6 ]
+  window_size: 16
+  mlp_ratio: 2
+  use_checkpoint: False
+  compress_ratio: 3
+  squeeze_factor: 30
+  conv_scale: 0.01
+  overlap_ratio: 0.5
+  upscale: 4
+  resi_connection: 1conv
+  downsampler: patchmerging
+  upsampler: pixelshuffle
+  mean: [ 0.3959, 0.4074, 0.3666 ] # For AID dataset.
+
+  cdp_feat: 3 # Number of CDP feature map channels, default value
+  use_cdp: True
+  encoder_iter: -1
+  # WARNING!!!!
+  # When training the first phase, this value("encoder_iter") should be set to the number of iterations
+  # for the first phase. When the first phase is completed and the weights from the first phase are used
+  # to train the second phase, this value should be set to -1.
+  # e.g.: 123456 iters for first phase, -1 iters for second phase. Please determine based on the dataset training
+  # epochs and number of iterations.
+
+
+#-- paths. --#
+path:
+  pretrain_network_g:
+  param_key_g: params_ema
+  strict_load_g: True
+
+
+#-- testing settings. --#
+val: # use val setting
+  save_img: True
+  pbar: True
+  suffix: ~
+  tif: True
+
+  # metrics.
+  metrics:
+

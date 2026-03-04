@@ -1,0 +1,77 @@
+#-- general settings. --#
+name: test_CDEHAT_MSE_SRx4_trained_on_AID
+model_type: CDEHATModel
+scale: 4
+num_gpu: 1 # auto
+manual_seed: 0
+
+
+tile: # Crop large-size lq images into tiles to save GPU memory.
+  tile_size: 96
+  tile_pad: 16
+
+
+#-- dataset and dataloader setting. --#
+datasets:
+  # test dataset
+  test_0:
+    name: AID
+    type: AIDDataset
+    dataroot_gt: C:\pythonProject\SR\temp
+    suffix: [ .tif, .png, .jpg ]
+    io_backend:
+      type: disk
+
+
+
+#-- network structures. --#
+# generator.
+network_g:
+  type: CDEHAT
+  img_size: 64
+  patch_size: 1
+  in_chans: 3
+  out_chans: 3
+  num_feat: 64
+  embed_dim: 180
+  depths: [ 6, 6, 6, 6, 6, 6 ]
+  num_heads: [ 6, 6, 6, 6, 6, 6 ]
+  window_size: 16
+  mlp_ratio: 2
+  use_checkpoint: False
+  compress_ratio: 3
+  squeeze_factor: 30
+  conv_scale: 0.01
+  overlap_ratio: 0.5
+  upscale: 4
+  resi_connection: 1conv
+  downsampler: patchmerging
+  upsampler: pixelshuffle
+  mean: [ 0.3959, 0.4074, 0.3666 ] # For AID dataset.
+
+  cdp_feat: 3 # Number of CDP feature map channels, default value
+  use_cdp: True
+  encoder_iter: -1
+  # WARNING!!!!
+  # When training the first phase, this value("encoder_iter") should be set to the number of iterations
+  # for the first phase. When the first phase is completed and the weights from the first phase are used
+  # to train the second phase, this value should be set to -1.
+  # e.g.: 123456 iters for first phase, -1 iters for second phase. Please determine based on the dataset training
+  # epochs and number of iterations.
+
+
+#-- paths. --#
+path:
+  pretrain_network_g:
+  param_key_g: params_ema
+  strict_load_g: True
+
+
+#-- testing settings. --#
+val: # use val setting
+  save_img: True
+  pbar: True
+  suffix: ~
+
+  # metrics.
+  metrics:
