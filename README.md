@@ -39,8 +39,10 @@ cd SR
 
 ## <a name="quick_start"></a>:flight_departure:Quick Start
 
-Download demo_v1.0.0 [temp.pth](https://github.com/cerulean136/CDEHAT/releases/download/demo_v1.0.0/temp.pth) to `weights/`, then run the following command to begin the reasoning demonstration.
-
+Download demo_v1.0.0 [temp.pth](https://github.com/cerulean136/CDEHAT/releases/download/demo_v1.0.0/temp.pth) to `weights/`, then run the following command to begin the model inference demonstration.
+```shell
+python -m super_resolution.test -opt super_resolution/options/test/test_Real_CDEHAT_GAN_SRx4_trained_on_AID.yml
+```
 
 
 
