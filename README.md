@@ -32,7 +32,7 @@ We thank the editors and reviewers for their work on this paper.
 
 You can find our CDEHAT model architecture and training framework codes in the `SR` folder; you can also visualize the Local Attribution Map (LAM) of SR models in `LAM` folder.
 
-Our **CA-2022-S2-NAIP** is currently being uploaded, and the process is expected to be completed by **March 4, 2026**.
+Our **CA-2022-S2-NAIP** is currently being uploaded, and the process is expected to be completed by **March 4-5, 2026**.
 
 
 ## <a name="installation"></a>:gear:Installation
