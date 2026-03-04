@@ -74,13 +74,18 @@ Please download the following remote sensing benchmarks:
 ## <a name="inference"></a>:crossed_swords:Inference
 
 Refer to `./super_resolution/options/test` for the configuration file of the model to be tested, and prepare the testing data and pretrained model.  
+
 Then run the following codes (taking `temp.pth` as an example):
+
 ```shell
 cd SR
 python -m super_resolution.test -opt -opt super_resolution/options/test/test_Real_CDEHAT_GAN_SRx4_trained_on_AID.yml
 ```
+
 Alternatively, you can run our script `begin_test_in_run_window.py` to quickly perform model inference.
+
 The testing results will be saved in the `./results` folder.  
+
 Please note that the test configuration file parameters `dataroot_gt` and `dataroot_lq` are used individually. When using `dataroot_gt`, the ground truth (GT) images for the test set are automatically generated into lq images by the data processing flow during the test. When using `dataroot_lq`, the test images are the lq images for the test set.
 
 
