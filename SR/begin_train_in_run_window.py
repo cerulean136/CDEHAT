@@ -24,4 +24,5 @@ train_Real_CDEHAT_GAN_SRx4_trained_on_AID = \
 
 if __name__ == "__main__":
     # Execute the command in a new process, print real-time output.
-    execute_command(train_Real_CDEHAT_MSE_SRx4_trained_on_AID)
+    execute_command(train_CDEHAT_MSE_SRx4_trained_on_AID)
+
