@@ -10,7 +10,7 @@
 
 - [Visual Results Display](#visual_results)
 - [Installation](#installation)
-- [Quick Start (gradio demo)](#quick_start)
+- [Quick Start](#quick_start)
 - [Inference](#inference)
 - [Train](#train)
 
