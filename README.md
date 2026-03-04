@@ -18,4 +18,6 @@ expected to be completed within two business days: **March 3 and March 4, 2026**
     <img src="assets/CDEHAT.png" style="border-radius: 15px">
 </p>
 
-You can find our CDEHAT model architecture and training framework in the CDEHAT/SR folder; you can also compare the local attribution graphs of different models in CDEHAT/LAM.
+You can find our **CDEHAT model architecture and training framework** in the **CDEHAT/SR** folder; you can also compare the **local attribution map* of different models in **CDEHAT/LAM**. (The README document for this project is still being further refined and improved.)
+
+Our **CA-2022-S2-NAIP** is currently being uploaded, and the process is expected to be completed by March 5, 2026.
