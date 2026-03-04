@@ -959,7 +959,7 @@ class WindowsAttention(nn.Module):
         return x
 
 
-# S(W)-MSA
+# (S)W-MSA
 class SwinTransformerBlock(nn.Module):
     def __init__(self,
                  dim, input_resolution,
@@ -1222,7 +1222,7 @@ class OverlapWindowAttention(nn.Module):
         return x
 
 
-# SO(W)-MSA
+# (S)OW-MSA
 class SowinTransformerBlock(nn.Module):
     def __init__(self,
                  overlap_ratio,
@@ -1678,4 +1678,5 @@ class CDEHAT(nn.Module):
         x = self.norm(x)
         x = self.patch_unembed(x, x_size)  # b, embed_dim, h, w
         return x
+
 
