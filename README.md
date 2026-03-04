@@ -6,6 +6,27 @@
 
 [Paper]() | [Project Page]()
 
+## :book:Table Of Contents
+
+- [Visual Results On Real-world Images](#visual_results)
+- [Update](#update)
+- [TODO](#todo)
+- [Installation](#installation)
+- [Pretrained Models](#pretrained_models)
+- [Quick Start (gradio demo)](#quick_start)
+- [Inference](#inference)
+- [Train](#train)
+
+
+
+
+
+
+
+
+
+
+
 Our paper was accepted on **March 3, 2026**.
 
 The publicly available **code** and newly created **dataset CA-2022-S2-NAIP** are being compiled and uploaded... 
