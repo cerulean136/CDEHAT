@@ -323,6 +323,7 @@ class CDEHATGANModel(SRModel):
 
         if isinstance(current_iter, int) and current_iter <= self.encoder_iter:
             self.is_diffusion = False
+            return
         else:
             print("Stage 2 validation!")
             self.is_diffusion = True
@@ -558,3 +559,4 @@ class CDEHATGANModel(SRModel):
                 self.gt = self.gt[:, :, 0:old_h_lq * scale, 0:old_w_lq * scale]
 
         torch.cuda.empty_cache()
+
