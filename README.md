@@ -1,6 +1,9 @@
-# CDEHAT
+<p align="center">
+    <img src="assets/logo.png" width="400">
+</p>
 
-***CDEHAT: Conditional Diffusion-Assisted Enhanced Hybrid Attention Transformer for Remote Sensing Imagery Super-Resolution***
+## CDEHAT: Conditional Diffusion-Assisted Enhanced Hybrid Attention Transformer for Remote Sensing Imagery Super-Resolution
+
 
 
 Our paper was accepted on **March 3, 2026**.
