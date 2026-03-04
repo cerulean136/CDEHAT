@@ -43,6 +43,7 @@ Download demo_v1.0.0 [temp.pth](https://github.com/cerulean136/CDEHAT/releases/d
 ```shell
 python -m super_resolution.test -opt super_resolution/options/test/test_Real_CDEHAT_GAN_SRx4_trained_on_AID.yml
 ```
+Alternatively, you can run our script `begin_test_in_run_window.py` to quickly perform model inference.
 
 
 
