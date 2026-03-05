@@ -28,8 +28,6 @@ The model architecture is located [here](SR/super_resolution/archs/cdehat_arch.p
 ## <a name="update"></a>:new:Update
 Our paper was accepted on **March 3, 2026**.
 
-We thank the editors and reviewers for their work on this paper.
-
 You can find our CDEHAT model architecture and training framework codes in the `SR` folder; you can also visualize the Local Attribution Map (LAM) of SR models in `LAM` folder.
 
 ## <a name="installation"></a>:gear:Installation
@@ -62,7 +60,7 @@ Please download the following remote sensing benchmarks:
 
 Our [CA-2022-S2-NAIP](https://zenodo.org/records/18869850) benchmark is now publicly available on Zenodo.
 
-| Data Type | [AID](https://captain-whu.github.io/AID/) | [DOTA-v1.0](https://captain-whu.github.io/DOTA/dataset.html) | [DIOR](https://www.sciencedirect.com/science/article/pii/S0924271619302825) | [UC Merced Land Use](https://vision.ucmerced.edu/datasets/) | [WHU-RS19](https://captain-whu.github.io/BED4RS/) | [CA-2022-S2-NAIP](https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/scene-classification/)|
+| Data Type | [AID](https://captain-whu.github.io/AID/) | [DOTA-v1.0](https://captain-whu.github.io/DOTA/dataset.html) | [DIOR](https://www.sciencedirect.com/science/article/pii/S0924271619302825) | [UC Merced Land Use](https://vision.ucmerced.edu/datasets/) | [WHU-RS19](https://captain-whu.github.io/BED4RS/) | [CA-2022-S2-NAIP](https://zenodo.org/records/18869850)|
 | :----: | :-----: | :----: | :----: | :----: |:----:|:----:|
 |Training | [Download](https://captain-whu.github.io/AID/) | None | None | None | None | [Download](https://zenodo.org/records/18869850) |
 |Testing | [Download](https://captain-whu.github.io/AID/) | [Download](https://captain-whu.github.io/DOTA/dataset.html) | [Download](https://drive.google.com/drive/folders/1UdlgHk49iu6WpcJ5467iT-UqNPpx__CC) | [Download](https://www.kaggle.com/datasets/abdulhasibuddin/uc-merced-land-use-dataset) | [Download](https://www.kaggle.com/datasets/sunray2333/whurs191) | [Download](https://zenodo.org/records/18869850) | 
