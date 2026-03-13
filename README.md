@@ -54,6 +54,10 @@ python -m super_resolution.test -opt super_resolution/options/test/demo.yml
 ```
 Alternatively, you can run our script `begin_test_in_run_window.py` to quickly perform model inference.
 
+The testing results will be saved in the `./results` folder.
+
+You can now put your own remote sensing image data into the `./demo` folder to perform SR reconstruction.
+
 
 ## 🎁 Dataset
 Please download the following remote sensing benchmarks:
