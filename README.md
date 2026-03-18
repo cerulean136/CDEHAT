@@ -13,7 +13,7 @@
     <img src="assets/CDEHAT.png"  width="900">
 </p>
 
-The model architecture is located [here](SR/super_resolution/archs/cdehat_arch.py).
+The model architecture is located [here](SR/super_resolution/archs/cdehat_arch.py). Please star our work if it's helpful.
 
 
 ## :book:Table Of Contents
