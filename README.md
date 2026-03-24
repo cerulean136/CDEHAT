@@ -97,7 +97,7 @@ First, we train a EncoderHR, which will be used to guid the training of stage 2.
         ...
     ```
 
-2. Fill in the [training configuration file](SR/super_resolution/options/train/train_CDEHAT_MSE_SRx4_trained_on_AID.yml) with appropriate values. `dataroot_gt` and `suffix`. (The training configuration file must have the `dataroot_gt` parameter. `dataroot_lq` can be omitted; when omitted, it defaults to generating LQ images from the ground truth (GT) images during training.)
+2. Fill in the [training configuration file](SR/super_resolution/options/train/train_CDEHAT_MSE_SRx4_trained_on_AID.yml) with appropriate values. `dataroot_gt` and `suffix`. (The training configuration file must have the `dataroot_gt` parameter. `dataroot_lq` can be omitted; when omitted, it defaults to generating LQ images from the ground truth (GT) images during training. It is recommended to crop the dataset images to LR=64 and HR=256 (for 4x SR) before model training.)
 
 3. A suitable `encoder_iter` is determined by the training set size and the number of iterations. It can be 1/4 of the total number of iterations.
 
