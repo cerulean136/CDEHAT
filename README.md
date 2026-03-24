@@ -5,7 +5,7 @@
 
 ## CDEHAT: Conditional Diffusion-Assisted Enhanced Hybrid Attention Transformer for Remote Sensing Imagery Super-Resolution
 
-[Paper]() | [PDF]()
+[Paper](https://doi.org/10.1016/j.isprsjprs.2026.03.002) | [PDF](https://doi.org/10.1016/j.isprsjprs.2026.03.002)
 
 
 ## <a name="update"></a>:dna:Network
