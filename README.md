@@ -170,14 +170,13 @@ If you have any questions, please feel free to contact with me at cerulean136@ou
 Please cite us if our work is useful for your research.
 
 ```
-@article{WU2026488,
-title = {CDEHAT: Conditional Diffusion-Assisted Enhanced Hybrid Attention Transformer for remote sensing imagery super-resolution},
-author = {Xiande Wu and Rui Liu and Wei Wu and Haiping Yang and Liao Yang},
-journal = {ISPRS Journal of Photogrammetry and Remote Sensing},
-volume = {235},
-pages = {488-510},
-year = {2026},
-issn = {0924-2716},
-doi = {https://doi.org/10.1016/j.isprsjprs.2026.03.002},
+@article{wu2026cdehat,
+  title={CDEHAT: Conditional Diffusion-Assisted Enhanced Hybrid Attention Transformer for remote sensing imagery super-resolution},
+  author={Wu, Xiande and Liu, Rui and Wu, Wei and Yang, Haiping and Yang, Liao},
+  journal={ISPRS Journal of Photogrammetry and Remote Sensing},
+  volume={235},
+  pages={488--510},
+  year={2026},
+  publisher={Elsevier}
 }
 ```
