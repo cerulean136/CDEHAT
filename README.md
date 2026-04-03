@@ -26,7 +26,7 @@ The model architecture is located [here](SR/super_resolution/archs/cdehat_arch.p
 
 
 ## <a name="update"></a>:new:Update
-Our paper was accepted on **March 3, 2026**.
+Our paper was accepted on **March 3, 2026**. (ISPRS)
 
 You can find our CDEHAT model architecture and training framework codes in the `SR` folder; you can also visualize the Local Attribution Map (LAM) of SR models in `LAM` folder.
 
