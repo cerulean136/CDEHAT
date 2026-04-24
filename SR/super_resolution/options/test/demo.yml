@@ -14,7 +14,7 @@ tile:
 datasets:
   test_0:
     name: RealWorld
-    type: RealWorldDataset
+    type: AIDDataset
     dataroot_lq: .\demo
     suffix: [ .tif, .png, .jpg ]
     io_backend:
